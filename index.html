@@ -92,7 +92,7 @@
   }
 
   .mark{
-    width:78px;
+    width:150px;
     height:auto;
     flex:0 0 auto;
   }
@@ -120,14 +120,20 @@
   }
 
   .date-pill{
-    font-size:12px;
-    font-weight:500;
-    letter-spacing:0.03em;
-    color: var(--ink);
-    background: rgba(108,143,131,0.12);
-    border: 1px solid rgba(108,143,131,0.28);
-    padding:6px 14px;
-    border-radius:999px;
+    font-family:'Mr Dafoe', cursive;
+    font-weight:400;
+    font-size:clamp(14px, 4vw, 16px);
+    line-height:1.2;
+    color: var(--invite-grey);
+    font-synthesis: none;
+    /* Mr Dafoe only comes in one heavy weight; a hairline stroke in the
+       card's own colour trims the strokes so it reads light, not bold. */
+    -webkit-text-stroke: 0.35px var(--paper);
+    transform: skewX(14deg);
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
   }
 
   .btn-yes{
@@ -231,9 +237,12 @@
 
     <div class="ask">
       <img class="mark" src="logo_mark.png" alt="" aria-hidden="true">
+      <div class="date-pill">
+        <span>Capilla del Santísimo Cristo de la Vera Cruz</span>
+        <span>3 oct · Isla de León</span>
+      </div>
       <h1>¿Quieres ser nuestro testigo?</h1>
       <p class="copy">Firma aquí, cero letra pequeña.</p>
-      <span class="date-pill">3 oct · Isla de León</span>
       <button class="btn-yes" id="btnYes" type="button">Sí, quiero</button>
     </div>
 
